@@ -15,8 +15,8 @@
 
 #include <gtest/gtest.h>
 
-#include "RbtBiMolWorkSpace.h"
-#include "RbtModel.h"
+#include "BiMolWorkSpace.h"
+#include "Model.h"
 
 namespace rxdock {
 
@@ -32,9 +32,9 @@ protected:
   // Helper functions
   double CompareScoresForDisabledAndNoSolvent();
   double CompareScoresForSolventModes();
-  bool testFlexAtomFactory(RbtModel *pModel, int expected[9][3]);
-  RbtBiMolWorkSpacePtr m_workSpace;
-  RbtModelList m_solventList;
+  bool testFlexAtomFactory(Model *pModel, int expected[9][3]);
+  BiMolWorkSpacePtr m_workSpace;
+  ModelList m_solventList;
 };
 
 } // namespace unittest
