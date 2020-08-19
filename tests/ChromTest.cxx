@@ -75,7 +75,7 @@ void ChromTest::TearDown() {
 // extra setup/teardown for building a simple scoring function and workspace
 void ChromTest::setupWorkSpace() {
   // Set up a minimal workspace and scoring function for docking
-  m_SF = new SFAgg("SCORE");
+  m_SF = new SFAgg(GetMetaDataPrefix() + "score");
   BaseSF *sfInter = new VdwIdxSF("INTER_VDW");
   sfInter->SetParameter(VdwSF::GetEcut(), 1.0);
   m_SF->Add(sfInter);

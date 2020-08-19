@@ -52,7 +52,7 @@ void OccupancyTest::TearDown() {
 // 1) Check that the total desolvation score for receptor / ligand / (disabled)
 // solvent matches the total score with no solvent present
 TEST_F(OccupancyTest, SolvationSF) {
-  BaseSF *sfAgg = new SFAgg("SCORE");
+  BaseSF *sfAgg = new SFAgg(GetMetaDataPrefix() + "score");
   BaseSF *sfInter = new SFAgg("INTER");
   BaseSF *sfSolv = new SAIdxSF("SOLV");
   sfAgg->Add(sfInter);
@@ -70,7 +70,7 @@ TEST_F(OccupancyTest, SolvationSF) {
 // 2) Check that the total polar score for receptor / ligand / (disabled)
 // solvent matches the total score with no solvent present
 TEST_F(OccupancyTest, PolarSF) {
-  BaseSF *sfAgg = new SFAgg("SCORE");
+  BaseSF *sfAgg = new SFAgg(GetMetaDataPrefix() + "score");
   BaseSF *sfInter = new SFAgg("INTER");
   BaseSF *sfSetupPolar = new SetupPolarSF("SETUP");
   BaseSF *sfPolar = new PolarIdxSF("POLAR");
@@ -96,7 +96,7 @@ TEST_F(OccupancyTest, PolarSF) {
 // 3) Check that the total vdW score for receptor / ligand / (disabled) solvent
 // matches the total score with no solvent present
 TEST_F(OccupancyTest, VdwSF) {
-  BaseSF *sfAgg = new SFAgg("SCORE");
+  BaseSF *sfAgg = new SFAgg(GetMetaDataPrefix() + "score");
   BaseSF *sfInter = new SFAgg("INTER");
   BaseSF *sfVdw = new VdwIdxSF("VDW");
   sfAgg->Add(sfInter);
@@ -112,7 +112,7 @@ TEST_F(OccupancyTest, VdwSF) {
 }
 
 TEST_F(OccupancyTest, VdwSFSolventModes) {
-  BaseSF *sfAgg = new SFAgg("SCORE");
+  BaseSF *sfAgg = new SFAgg(GetMetaDataPrefix() + "score");
   BaseSF *sfInter = new SFAgg("INTER");
   BaseSF *sfSystem = new SFAgg("SYSTEM");
   BaseSF *sfVdw = new VdwIdxSF("VDW");

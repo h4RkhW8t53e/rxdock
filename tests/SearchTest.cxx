@@ -43,7 +43,7 @@ void SearchTest::SetUp() {
                 std::back_inserter(m_atomList));
     }
     // Set up a minimal workspace and scoring function for docking
-    m_SF = new SFAgg("SCORE");
+    m_SF = new SFAgg(GetMetaDataPrefix() + "score");
     BaseSF *sfInter = new VdwIdxSF("INTER_VDW");
     sfInter->SetParameter(VdwSF::GetEcut(), 1.0);
     m_SF->Add(sfInter);
